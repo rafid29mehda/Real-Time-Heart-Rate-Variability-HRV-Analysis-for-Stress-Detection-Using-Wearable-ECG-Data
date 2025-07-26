@@ -39,3 +39,15 @@ The project follows a six-step pipeline, implemented in Python and designed to r
   - Generates a 10-minute ECG signal using `nk.ecg_simulate` with a heart rate of 60 BPM and 5% noise for realism.
   - Assigns binary labels (0: low stress, 1: high stress) with a 60:40 probability using `np.random.choice`.
   - Prints the shapes of the ECG signal and labels, and the label distribution.
+
+- **Rationale**: Synthetic data ensures reproducibility and accessibility, mimicking real ECG signals for testing.
+
+### Step 3: Preprocess ECG (`preprocess_ecg`)
+- **Purpose**: Segments the ECG signal into overlapping windows and detects R-peaks for HRV analysis.
+- **Function**: `preprocess_ecg(ecg_signal, labels, window_size=3500, sampling_rate=700)`
+- Segments the ECG into 5-second windows (3500 samples at 700 Hz) with 50% overlap (step size: `window_size // 2`) to capture temporal dynamics.
+- Assigns a binary label to each segment based on the proportion of high-stress labels (1) in the window:
+  - If the proportion exceeds 0.4, the segment is labeled as high stress (1); otherwise, low stress (0).
+  - This threshold ensures a balanced label distribution, addressing previous issues with single-class segments.
+- Cleans each segment using `nk.ecg_clean` and detects R-peaks with `nk.ecg_peaks`.
+- Returns an array of segments, a list of R-peak indices, and segment labels.
