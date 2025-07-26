@@ -90,3 +90,8 @@ Plus a bar plot of feature importance.
 - Saves the Random Forest model to `results/rf_model.pkl` using `pickle`.
 - Saves the classification report to `results/classification_report.txt`.
 - Downloads results in Colab using `files.download`.
+
+- **Rationale**: The test set evaluation quantifies model generalization, and saved files enable reproducibility.
+
+
+
