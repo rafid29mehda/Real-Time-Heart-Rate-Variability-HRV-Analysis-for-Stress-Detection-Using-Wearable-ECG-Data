@@ -1,7 +1,7 @@
 # Real-Time Heart Rate Variability (HRV) Analysis for Stress Detection
 
 ## Project Overview
-This project implements a pipeline for real-time stress detection using Heart Rate Variability (HRV) features extracted from synthetic electrocardiogram (ECG) data. The goal is to develop a lightweight machine learning model suitable for wearable devices, such as smartwatches, to classify stress levels (low vs. high). The pipeline processes ECG signals, extracts HRV features, and trains a Random Forest classifier to predict stress, demonstrating expertise in biomedical signal processing and machine learning. This project complements other portfolio projects (e.g., ECG arrhythmia classification) by focusing on feature engineering and real-time analysis, enhancing the author’s PhD profile in Biomedical Signal Processing.
+This project implements a pipeline for real-time stress detection using Heart Rate Variability (HRV) features extracted from synthetic electrocardiogram (ECG) data. The goal is to develop a lightweight machine learning model suitable for wearable devices, such as smartwatches, to classify stress levels (low vs. high). The pipeline processes ECG signals, extracts HRV features, and trains a Random Forest classifier to predict stress, demonstrating expertise in biomedical signal processing and machine learning. 
 
 ## Objectives
 - Generate synthetic ECG data to simulate wearable device inputs.
