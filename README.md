@@ -78,3 +78,15 @@ The project follows a six-step pipeline, implemented in Python and designed to r
 - Evaluates on the validation set using `classification_report`, reporting precision, recall, and F1-score for low and high stress.
 - Plots feature importance to identify key HRV metrics.
 - Returns the trained model and split data.
+
+Plus a bar plot of feature importance.
+- **Rationale**: Random Forest is lightweight, robust to noise, and interpretable, making it suitable for wearable applications.
+
+### Step 6: Evaluate and Save (`evaluate_and_save`)
+- **Purpose**: Evaluates the model on a test set and saves the model and results.
+- **Function**: `evaluate_and_save(rf_model, hrv_features, segment_labels)`
+- Splits data into training+validation and test sets (80:20).
+- Predicts on the test set and generates a classification report.
+- Saves the Random Forest model to `results/rf_model.pkl` using `pickle`.
+- Saves the classification report to `results/classification_report.txt`.
+- Downloads results in Colab using `files.download`.
