@@ -1,0 +1,9 @@
+Test Set Evaluation:
+              precision    recall  f1-score   support
+
+  Low Stress       0.48      0.40      0.43        25
+ High Stress       0.44      0.52      0.48        23
+
+    accuracy                           0.46        48
+   macro avg       0.46      0.46      0.46        48
+weighted avg       0.46      0.46      0.46        48
