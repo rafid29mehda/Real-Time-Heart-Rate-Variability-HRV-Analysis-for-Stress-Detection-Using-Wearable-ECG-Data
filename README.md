@@ -20,7 +20,6 @@ This project implements a pipeline for real-time stress detection using Heart Ra
 - **Rationale**: Synthetic data is used due to restricted access to real datasets like WESAD. The synthetic ECG mimics real-world signals, allowing the pipeline to be tested and extended to real data in future work.
 
 ## Methodology
-The project follows a six-step pipeline, implemented in Python and designed to run in Google Colab. Each step is encapsulated in a modular function, stored in a separate `.py` file within the `src/` folder.
 
 ### Step 1: Install Dependencies
 - **Purpose**: Sets up the Python environment with required libraries.
