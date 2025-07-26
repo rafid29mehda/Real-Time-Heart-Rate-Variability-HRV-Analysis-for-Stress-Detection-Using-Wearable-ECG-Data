@@ -30,7 +30,6 @@ This project implements a pipeline for real-time stress detection using Heart Ra
   - `neurokit2`: For ECG signal generation, cleaning, R-peak detection, and HRV feature extraction.
   - `matplotlib`: For visualizing feature importance and results.
 - **Implementation**: Uses `pip install` to ensure libraries are available in Colab and imports them for use.
-- **Output**: Confirmation of successful installation (e.g., `Successfully installed ...`).
 
 ### Step 2: Generate Synthetic Data (`load_synthetic_data`)
 - **Purpose**: Creates a synthetic ECG signal and corresponding stress labels to simulate wearable device data.
