@@ -51,3 +51,19 @@ The project follows a six-step pipeline, implemented in Python and designed to r
   - This threshold ensures a balanced label distribution, addressing previous issues with single-class segments.
 - Cleans each segment using `nk.ecg_clean` and detects R-peaks with `nk.ecg_peaks`.
 - Returns an array of segments, a list of R-peak indices, and segment labels.
+
+- **Rationale**: The 5-second window and overlap mimic real-time wearable processing, while R-peak detection is essential for HRV computation.
+
+### Step 4: Extract HRV Features (`extract_hrv_features`)
+- **Purpose**: Computes time- and frequency-domain HRV features from R-peaks to represent stress-related physiological changes.
+- **Function**: `extract_hrv_features(segments, r_peaks_list, sampling_rate=700)`
+- For each segment:
+  - Checks if there are at least 3 R-peaks (minimum for reliable HRV).
+  - Computes time-domain HRV features (e.g., RMSSD, SDNN) using `nk.hrv_time`.
+  - Computes frequency-domain HRV features (e.g., LF/HF ratio) using `nk.hrv_frequency` with normalization.
+  - Concatenates features into a single vector (~20 features).
+  - Handles edge cases:
+    - If R-peaks are insufficient (<3), returns a zero vector.
+    - If HRV computation fails (e.g., empty dataframes or interpolation errors), returns a zero vector.
+- Converts features to a numpy array, replaces NaNs with zeros, and normalizes using `StandardScaler`.
+- Prints the feature array shape.
