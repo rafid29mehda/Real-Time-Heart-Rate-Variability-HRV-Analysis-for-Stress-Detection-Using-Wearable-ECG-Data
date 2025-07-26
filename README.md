@@ -67,3 +67,14 @@ The project follows a six-step pipeline, implemented in Python and designed to r
     - If HRV computation fails (e.g., empty dataframes or interpolation errors), returns a zero vector.
 - Converts features to a numpy array, replaces NaNs with zeros, and normalizes using `StandardScaler`.
 - Prints the feature array shape.
+
+- **Rationale**: HRV features are lightweight and interpretable, ideal for stress detection on resource-constrained devices.
+
+### Step 5: Train Random Forest (`train_rf_model`)
+- **Purpose**: Trains a Random Forest classifier to predict stress levels from HRV features.
+- **Function**: `train_rf_model(hrv_features, segment_labels)`
+- Splits data into training and validation sets (80:20) using `train_test_split`.
+- Trains a Random Forest classifier with 100 trees (`n_estimators=100`).
+- Evaluates on the validation set using `classification_report`, reporting precision, recall, and F1-score for low and high stress.
+- Plots feature importance to identify key HRV metrics.
+- Returns the trained model and split data.
